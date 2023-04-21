@@ -91,7 +91,7 @@ classdef PM_Figures_BarGraph
                 
                 obj.Stairs =                false;
                 
-                obj.XLabel =                'x';
+                obj.XLabel =                'Group';
            
              end
 
