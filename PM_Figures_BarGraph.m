@@ -114,10 +114,25 @@ classdef PM_Figures_BarGraph
                end
 
                 function obj = set.YLabel(obj, Value)
-                 assert(ischar(Value), 'Wrong input.')
+                 assert(ischar(Value)  || iscellstr(Value), 'Wrong input.')
                  obj.YLabel = Value;
 
              end
+
+
+
+    end
+
+    methods % GETTERS
+
+         function myBar = getBar(obj)
+            myBar = obj.MyBar;
+         end
+
+         function myBar = getAxes(obj)
+            myBar = obj.Axes;
+         end
+
 
 
 
@@ -127,7 +142,7 @@ classdef PM_Figures_BarGraph
    
         
         function obj = makePanel(obj)
-            %makePanel makes bar-graph with error bars and p-value;
+            % MAKEPANEL makes bar-graph with error bars and p-value;
            
             hold on
             obj =           obj.makeBars;
@@ -148,10 +163,7 @@ classdef PM_Figures_BarGraph
 
         end
 
-        function myBar = getBar(obj)
-            myBar = obj.MyBar;
-
-        end
+       
 
    
     end
